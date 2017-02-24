@@ -1,0 +1,5 @@
+1 triamgle t1 t2 t3
+2 square t1 t2
+3 circle t7
+4 rhombus t3 t4 t5 t7
+5 hexagon t4
