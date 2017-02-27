@@ -34,7 +34,7 @@ struct FlowerBed
 		iss >> shape;
 		copy(istream_iterator<string>(iss), istream_iterator<string>(), back_inserter(types));
 	}
-
+	FlowerBed() {};
 	int id;
 	string shape;
 	vector<string> types;
@@ -46,6 +46,14 @@ ostream& operator<<(ostream& o, const FlowerBed& fb)
 	return o;
 }
 
+istream& operator>>(istream& o, FlowerBed& fb)
+{
+	string a;
+	getline(o, a);
+	fb = FlowerBed(a);
+	return o;
+}
+
 int main()
 {
 	ifstream in("in.txt");
@@ -53,12 +61,9 @@ int main()
 
 	vector<FlowerBed> flbeds;
 	// <task 1>
-	while (!in.eof())
-	{
-		string inp;
-		getline(in, inp);
-		flbeds.push_back(FlowerBed(inp));
-	}
+	istream_iterator<FlowerBed> iterBgn(in) , currIter;
+	
+	copy(iterBgn, currIter, back_inserter(flbeds));	
 	in.close();
 
 	// sort by shape

@@ -3,3 +3,5 @@
 3 circle t7 t111 t2
 4 rhombus t3 t2 t4 t5 t7 t111
 5 hexagon t4 t111 t2
+6 square t3 t4 t111 t2
+7 circle t111 t2
